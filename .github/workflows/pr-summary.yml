@@ -14,6 +14,8 @@ jobs:
         with:
           github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           open-api-key: ${{ secrets.CHATGPT_API_KEY }}
+          open-api-endpoint: ${{ secrets.CHATGPT_API_ENDPOINT }}
+          open-api-deployment: ${{ secrets.CHATGPT_API_DEPLOYMENT }}
           max-prompt-tokens: '10000'
           ignore-paths: '.github/*, src/, package*.json, .env*'
           model: 'gpt-3.5-turbo'
