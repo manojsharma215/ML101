@@ -24,3 +24,4 @@ plt.show()
 
 
 print(model.predict([7.0]))
+#This is linear regression example
