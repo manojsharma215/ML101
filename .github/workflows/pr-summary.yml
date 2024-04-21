@@ -1,0 +1,24 @@
+on:
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  chatgptComment:
+    runs-on: ubuntu-latest
+    name: Add Comment
+    steps:
+      - name: Add Comment 
+        uses: manojsharmadcx/GenAICX-PullRequestSummarizer@bb4f3e01296986d9768dd9c9d8e19f91819cdd13
+        with:
+          github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          open-api-key: ${{ secrets.CHATGPT_API_KEY }}
+          max-prompt-tokens: '10000'
+          ignore-paths: '.github/*, src/, package*.json, .env*'
+          model: 'gpt-3.5-turbo'
+          temperature: 1
+          max-response-tokens: 512
+          top_p: 1
+          frequency-penalty: 0
+          presence-penalty: 1
